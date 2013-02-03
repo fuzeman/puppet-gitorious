@@ -34,7 +34,7 @@ production:
   gitorious_client_host: localhost
 
   # Host name users use to reach Gitorious, e.g. "gitorious.org".
-  gitorious_host: <%= gitorious_host %>
+  gitorious_host: <%= @gitorious_host %>
 
   # The path where git repositories are stored. The actual (bare) repositories
   # reside in #{repository_base_path}/#{project.slug}/#{repository.name}.git/:
@@ -56,7 +56,7 @@ production:
   # Session key. It is recommended to use a long random string for this. A
   # suitable key can be generated with `apg -m 64`. Make sure you paste the
   # key as one long string, no newlines or escaped characters.
-  cookie_secret: <%= cookie_secret %>
+  cookie_secret: <%= @cookie_secret %>
 
   # --------------------
   # RECOMMENDED SETTINGS
@@ -76,7 +76,7 @@ production:
 
   # If Gitorious trips on an unrecoverable error, it will send you an email
   # with details if you provide your addresses here.
-  exception_notification_emails: <%= gitorious_admin_email %>
+  exception_notification_emails: <%= @gitorious_admin_email %>
 
   # Messaging queue configuration
   # Gitorious ships with two message queue implementations; Stomp via the
@@ -149,7 +149,7 @@ production:
   #system_message:
 
   # Define your locale. See config/locales/ for supported locales.
-  locale: <%= locale %>
+  locale: <%= @locale %>
 
   # Hides http:// clone URLs from repository boxes when set to true.
   #hide_http_clone_urls: false
@@ -170,7 +170,7 @@ production:
   is_gitorious_dot_org: false
 
   # Configure which address to use as From when sending email
-  sender_email_address: "Gitorious <<%= gitorious_admin_email %>>"
+  sender_email_address: "Gitorious <<%= @gitorious_admin_email %>>"
 
   # Mangle visible e-mail addresses (spam protection)
   mangle_email_addresses: false
@@ -231,7 +231,7 @@ production:
   #
 
   # Pick a default license
-  default_license: <%= default_license %>
+  default_license: <%= @default_license %>
 
   # ----------------
   # THEMING SETTINGS
@@ -241,10 +241,10 @@ production:
   #extra_html_head_data:
 
   # Email address to the support for the Gitorious server
-  gitorious_support_email: <%= gitorious_admin_email %>
+  gitorious_support_email: <%= @gitorious_admin_email %>
 
   # The SSH fingerprint of your server
-  ssh_fingerprint: "<%= ssh_fingerprint %>"
+  ssh_fingerprint: "<%= @ssh_fingerprint %>"
 
   # An array of two-element arrays to be rendered along the normal links in the
   # footer on the site The first element is the link text, the next is the URL

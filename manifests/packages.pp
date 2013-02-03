@@ -36,9 +36,9 @@ class gitorious::packages {
             ensure => present,
         }
         Group['rvm'] -> User <| |>
-        Users::Massuseraccount <| tag == 'administrators' |> {
-            groups => [ 'infra', 'rvm', ]
-        }
+#        Users::Massuseraccount <| tag == 'administrators' |> {
+#            groups => [ 'infra', 'rvm', ]
+#        }
 
         include apt::backports # rvm_* requires Puppet >= 2.6.7
 
